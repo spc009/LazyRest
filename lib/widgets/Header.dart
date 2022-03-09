@@ -47,26 +47,19 @@ class Header extends StatelessWidget {
                     circularStrokeCap: CircularStrokeCap.round,
                     progressColor: Colors.black,
                     backgroundColor: LightColors.kDarkRed,
-                    // center: CircleAvatar(
-                    //   backgroundColor: Color(0xFFFFFFFF),
-                    //   radius: 25.0,
-                    //   backgroundImage: AssetImage(
-                    //     'assets/images/jennifer_lopez.jpg',
-                    //   ),
-                    // ),
                     center: CircleAvatar(
-                      backgroundColor: LightColors.kBlue,
+                      backgroundColor: LightColors.kLightYellow,
                       radius: 25.0,
                       child: Icon(
                         Icons.home,
                         size: 30.0,
-                        color: Colors.white,
+                        color: LightColors.kDarkGreen,
                       ),
                     ),
                     footer: Text(
                       'Supatcha',
                       style: TextStyle(
-                        color: LightColors.kDarkGreen,
+                        color: LightColors.kLightYellow,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
@@ -89,18 +82,18 @@ class Header extends StatelessWidget {
                     progressColor: Colors.black,
                     backgroundColor: LightColors.kDarkRed,
                     center: CircleAvatar(
-                      backgroundColor: LightColors.kBlue,
+                      backgroundColor: LightColors.kLightYellow,
                       radius: 25.0,
                       child: Icon(
                         Icons.library_books,
                         size: 30.0,
-                        color: Colors.white,
+                        color: LightColors.kDarkGreen,
                       ),
                     ),
                     footer: Text(
                       'Courses',
                       style: TextStyle(
-                        color: LightColors.kDarkGreen,
+                        color: LightColors.kLightYellow,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
@@ -124,17 +117,17 @@ class Header extends StatelessWidget {
                     backgroundColor: LightColors.kRed2,
                     center: CircleAvatar(
                       radius: 25.0,
-                      backgroundColor: LightColors.kBlue,
+                      backgroundColor: LightColors.kLightYellow,
                       child: Icon(
                         Icons.person,
                         size: 30.0,
-                        color: Colors.white,
+                        color: LightColors.kDarkGreen,
                       ),
                     ),
                     footer: Text(
                       'Manage',
                       style: TextStyle(
-                        color: LightColors.kDarkGreen,
+                        color: LightColors.kLightYellow,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),
@@ -158,17 +151,17 @@ class Header extends StatelessWidget {
                     backgroundColor: LightColors.kDarkRed,
                     center: CircleAvatar(
                       radius: 25.0,
-                      backgroundColor: LightColors.kBlue,
+                      backgroundColor: LightColors.kLightYellow,
                       child: Icon(
                         Icons.logout,
                         size: 30.0,
-                        color: Colors.white,
+                        color: LightColors.kDarkGreen,
                       ),
                     ),
                     footer: Text(
                       'Logout',
                       style: TextStyle(
-                        color: LightColors.kDarkGreen,
+                        color: LightColors.kLightYellow,
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
                       ),

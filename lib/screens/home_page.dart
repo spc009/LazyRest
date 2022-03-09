@@ -87,40 +87,40 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            Container(
-              child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    SizedBox(height: 30),
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        // crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          // SizedBox(width: 50),
-                          TaskColumn(
-                            icon: Icons.blur_circular,
-                            iconBackgroundColor: LightColors.kRed,
-                            title: 'Credit :',
-                            subtitle: '100 credits',
-                          ),
-                          SizedBox(width: 60),
-                          TaskColumn(
-                            icon: Icons.blur_circular,
-                            iconBackgroundColor: LightColors.kRed,
-                            title: 'Credit :',
-                            subtitle: '100 credits',
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(height: 30),
-                  ],
-                ),
-              ),
-            ),
+            // Container(
+            //   child: SingleChildScrollView(
+            //     child: Column(
+            //       mainAxisSize: MainAxisSize.min,
+            //       crossAxisAlignment: CrossAxisAlignment.start,
+            //       children: <Widget>[
+            //         // SizedBox(height: 30),
+            //         // Container(
+            //         //   child: Row(
+            //         //     mainAxisAlignment: MainAxisAlignment.center,
+            //         //     // crossAxisAlignment: CrossAxisAlignment.center,
+            //         //     children: [
+            //         //       // SizedBox(width: 50),
+            //         //       TaskColumn(
+            //         //         icon: Icons.blur_circular,
+            //         //         iconBackgroundColor: LightColors.kRed,
+            //         //         title: 'Credit :',
+            //         //         subtitle: '100 credits',
+            //         //       ),
+            //         //       SizedBox(width: 60),
+            //         //       TaskColumn(
+            //         //         icon: Icons.blur_circular,
+            //         //         iconBackgroundColor: LightColors.kRed,
+            //         //         title: 'Credit :',
+            //         //         subtitle: '100 credits',
+            //         //       ),
+            //         //     ],
+            //         //   ),
+            //         // ),
+            //         // SizedBox(height: 30),
+            //       ],
+            //     ),
+            //   ),
+            // ),
             Get_time(Day),
           ],
         ),

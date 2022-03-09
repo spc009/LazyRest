@@ -3,6 +3,7 @@ import 'package:flutter_task_planner_app/dates_list.dart';
 import 'package:flutter_task_planner_app/theme/colors/light_colors.dart';
 import 'package:flutter_task_planner_app/widgets/Header.dart';
 import 'package:flutter_task_planner_app/widgets/calendar.dart';
+import 'package:flutter_task_planner_app/widgets/get_time.dart';
 import 'package:flutter_task_planner_app/widgets/task_container.dart';
 import 'package:flutter_task_planner_app/widgets/back_button.dart';
 import 'package:flutter_task_planner_app/screens/create_new_task_page.dart';
@@ -10,8 +11,14 @@ import 'package:flutter_task_planner_app/widgets/Date.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 
-class CalendarPage extends StatelessWidget {
+class CalendarPage extends StatefulWidget {
+  @override
+  State<CalendarPage> createState() => _CalendarPageState();
+}
+
+class _CalendarPageState extends State<CalendarPage> {
   DateTime _selectedDay = DateTime.now();
+
   DateTime _focusedDay = DateTime.now();
 
   Widget _dashedText() {
@@ -56,7 +63,7 @@ class CalendarPage extends StatelessWidget {
                     ),
                     Container(
                       height: 40.0,
-                      width: 120,
+                      width: 200,
                       decoration: BoxDecoration(
                         color: LightColors.kGreen,
                         borderRadius: BorderRadius.circular(30),
@@ -72,7 +79,7 @@ class CalendarPage extends StatelessWidget {
                         },
                         child: Center(
                           child: Text(
-                            'Add task',
+                            'new Appointment',
                             style: TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.w700,
@@ -101,95 +108,27 @@ class CalendarPage extends StatelessWidget {
                   firstDay: DateTime(DateTime.now().year - 5),
                   lastDay: DateTime(DateTime.now().year + 5),
                   focusedDay: _focusedDay,
-
                   selectedDayPredicate: (day) {
                     return isSameDay(_selectedDay, day);
                   },
-                  onDaySelected: (selectedDay, focusedDay) {
-                    _selectedDay = selectedDay;
-                    _focusedDay =
-                        focusedDay; // update `_focusedDay` here as well
+                  onDaySelected: (focusedDay, selectedDay) {
+                    setState(() {
+                      _selectedDay = selectedDay;
+                      _focusedDay =
+                          focusedDay; // update `_focusedDay` here as well
+                    });
                   },
                   onPageChanged: (focusedDay) {
-                    _focusedDay = focusedDay;
+                    setState(() {
+                      _focusedDay = focusedDay;
+                    });
                   },
                   // eventLoader: (day) {
                   //   return _getEventsForDay(day);
                   // },
                 ),
               ),
-              Expanded(
-                child: SingleChildScrollView(
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 20.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Expanded(
-                          flex: 1,
-                          child: ListView.builder(
-                            itemCount: time.length,
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            itemBuilder: (BuildContext context, int index) =>
-                                Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(vertical: 15.0),
-                              child: Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
-                                  '${time[index]} ${double.parse(time[index]) > 8 ? 'PM' : 'AM'}',
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    color: Colors.black54,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        Expanded(
-                          flex: 5,
-                          child: ListView(
-                            shrinkWrap: true,
-                            physics: NeverScrollableScrollPhysics(),
-                            children: <Widget>[
-                              _dashedText(),
-                              TaskContainer(
-                                title: 'Project Research',
-                                subtitle:
-                                    'Discuss with the colleagues about the future plan',
-                                boxColor: LightColors.kLightYellow2,
-                              ),
-                              _dashedText(),
-                              TaskContainer(
-                                title: 'Work on Medical App',
-                                subtitle: 'Add medicine tab',
-                                boxColor: LightColors.kYellow,
-                              ),
-                              TaskContainer(
-                                title: 'Call',
-                                subtitle: 'Call to david',
-                                boxColor: LightColors.kPalePink,
-                              ),
-                              TaskContainer(
-                                title: 'Design Meeting',
-                                subtitle:
-                                    'Discuss with designers for new task for the medical app',
-                                boxColor: LightColors.kLightGreen,
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+              Get_time(_selectedDay.weekday),
             ],
           ),
         ),
