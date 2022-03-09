@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "288520331172",
+    "project_id": "lazyrest-fca99",
+    "storage_bucket": "lazyrest-fca99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288520331172:android:460cb89632d50c7490eb31",
+        "android_client_info": {
+          "package_name": "com.example.flutter_task_planner_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288520331172-jqgmllttlosjq10sa96o84egc4fqkgs4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxcFHUoe_8N-CA7Pty6FIR3pziPFRi0MM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288520331172-jqgmllttlosjq10sa96o84egc4fqkgs4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
