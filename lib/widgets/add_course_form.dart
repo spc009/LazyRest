@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_task_planner_app/screens/Add_course_page.dart';
+import 'package:flutter_task_planner_app/screens/home_page.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:flutter_task_planner_app/widgets/Add_course.dart';
 
@@ -24,7 +26,10 @@ class _AddCourseFormState extends State<AddCourseForm> {
 
   void _setText() {
     // AddCourse(AddCourseForm.id, AddCourseForm.title);
-      
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => HomePage()),
+    );
     print(AddCourseForm.title);
     // setState(() {
     //   // text = AddCourseForm.title;
@@ -33,13 +38,12 @@ class _AddCourseFormState extends State<AddCourseForm> {
 
   @override
   Widget build(BuildContext context) {
-    // String title = "";
     return Expanded(
       flex: 1,
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 10.0),
         padding: EdgeInsets.all(15.0),
-        height: 300,
+        height: 200,
         decoration: BoxDecoration(
           color: widget.cardColor,
           borderRadius: BorderRadius.circular(40.0),
@@ -53,28 +57,28 @@ class _AddCourseFormState extends State<AddCourseForm> {
               child: TextField(
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    hintText: 'Enter Course title',
+                    hintText: 'Enter Student ID',
                   ),
                   onChanged: (value) => {
                         print(value),
                         AddCourseForm.title = value,
                       }),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-              child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    hintText: 'Enter Course ID',
-                  ),
-                  onChanged: (value) => {
-                        print(value),
-                        AddCourseForm.id = value,
-                      }),
-            ),
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+            //   child: TextField(
+            //       decoration: InputDecoration(
+            //         border: OutlineInputBorder(),
+            //         hintText: 'Enter Course ID',
+            //       ),
+            //       onChanged: (value) => {
+            //             print(value),
+            //             AddCourseForm.id = value,
+            //           }),
+            // ),
             RaisedButton(
               onPressed: _setText,
-              child: Text('Add new Course '),
+              child: Text('Log in'),
               elevation: 8,
             ),
           ],

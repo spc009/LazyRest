@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_task_planner_app/screens/home_page.dart';
+import 'package:flutter_task_planner_app/screens/Add_course_page.dart';
+import 'package:flutter_task_planner_app/screens/Add_course_page.dart';
 import 'package:flutter_task_planner_app/theme/colors/light_colors.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
             displayColor: LightColors.kDarkGreen,
             fontFamily: 'Poppins'),
       ),
-      home: HomePage(),
+      home: AddCoursePage(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -57,7 +57,7 @@ class Header extends StatelessWidget {
                       ),
                     ),
                     footer: Text(
-                      'Supatcha',
+                      'Home',
                       style: TextStyle(
                         color: LightColors.kLightYellow,
                         fontSize: 16,
@@ -100,45 +100,45 @@ class Header extends StatelessWidget {
                     ),
                   ),
                 ),
+                // GestureDetector(
+                //   onTap: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(builder: (context) => AddCoursePage()),
+                //     );
+                //   },
+                //   child: CircularPercentIndicator(
+                //     radius: 28.0,
+                //     lineWidth: M,
+                //     animation: false,
+                //     percent: 1,
+                //     circularStrokeCap: CircularStrokeCap.round,
+                //     progressColor: Colors.black,
+                //     backgroundColor: LightColors.kRed2,
+                //     center: CircleAvatar(
+                //       radius: 25.0,
+                //       backgroundColor: LightColors.kLightYellow,
+                //       child: Icon(
+                //         Icons.person,
+                //         size: 30.0,
+                //         color: LightColors.kDarkGreen,
+                //       ),
+                //     ),
+                //     footer: Text(
+                //       'Supatcha',
+                //       style: TextStyle(
+                //         color: LightColors.kLightYellow,
+                //         fontSize: 16,
+                //         fontWeight: FontWeight.w500,
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => AddCoursePage()),
-                    );
-                  },
-                  child: CircularPercentIndicator(
-                    radius: 28.0,
-                    lineWidth: M,
-                    animation: false,
-                    percent: 1,
-                    circularStrokeCap: CircularStrokeCap.round,
-                    progressColor: Colors.black,
-                    backgroundColor: LightColors.kRed2,
-                    center: CircleAvatar(
-                      radius: 25.0,
-                      backgroundColor: LightColors.kLightYellow,
-                      child: Icon(
-                        Icons.person,
-                        size: 30.0,
-                        color: LightColors.kDarkGreen,
-                      ),
-                    ),
-                    footer: Text(
-                      'Manage',
-                      style: TextStyle(
-                        color: LightColors.kLightYellow,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Courses()),
                     );
                   },
                   child: CircularPercentIndicator(

@@ -12,8 +12,14 @@ import 'package:flutter_task_planner_app/screens/home_page.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:flutter_task_planner_app/screens/Task_page.dart';
 
+import '../screens/Clock_page.dart';
+
 class Get_assignment extends StatelessWidget {
   List<ActiveProjectsCard> card = [];
+  // List<String> Path = [];
+  final String id;
+  Get_assignment(this.id);
+
   var lock = Lock();
   List<Color> color = [
     LightColors.kGreen,
@@ -21,9 +27,6 @@ class Get_assignment extends StatelessWidget {
     LightColors.kDarkPink,
     LightColors.kYellow,
   ];
-  final String id;
-
-  Get_assignment(this.id);
 
   static CircleAvatar btn() {
     return CircleAvatar(
@@ -39,9 +42,27 @@ class Get_assignment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<DocumentSnapshot> getCourse() {
+    // Future<DocumentSnapshot> getPath() {
+    //   Firebase.initializeApp();
+    //   return FirebaseFirestore.instance
+    //       .collection('/Users/600610788/Courses/2-2564/id')
+    //       .get()
+    //       // ignore: missing_return
+    //       .then((QuerySnapshot querySnapshot) {
+    //     int i = 0;
+    //     querySnapshot.docs.forEach((doc) {
+    //       // id.add(doc.id.toString());
+    //       // title.add(doc["title"]);
+    //       String path = 'Courses/' + doc.id.toString() + '/Schedule';
+    //       Path.add(path);
+    //       i++;
+    //     });
+    //   });
+    // }
+
+    Future<DocumentSnapshot> getAssignment(String path) {
       Firebase.initializeApp();
-      return FirebaseFirestore.instance.collection('Courses').get()
+      return FirebaseFirestore.instance.collection(path).get()
           // ignore: missing_return
           .then((QuerySnapshot querySnapshot) {
         int i = 0;
@@ -58,8 +79,17 @@ class Get_assignment extends StatelessWidget {
       });
     }
 
+    Future T() async {
+      // await getPath();
+      String Path = '/Courses/' + id + '/Assignment';
+      // for (int i = 0; i < Path.length; i++) {
+      //   await getAssignment(Path[i]);
+      // }
+      await getAssignment(Path);
+    }
+
     return FutureBuilder(
-        future: getCourse(),
+        future: T(),
         builder: (context, snapshot) {
           // print(card);
           List<Widget> C = [];
@@ -72,33 +102,35 @@ class Get_assignment extends StatelessWidget {
 
           for (int i = 0; i < card.length; i++) {
             C.add(
-              Row(
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8, vertical: 16),
-                    child: GestureDetector(
+              Container(
+                alignment: Alignment(0.8, 1.0),
+                child: Row(
+                  children: [
+                    SizedBox(width: 20),
+                    GestureDetector(
                       onTap: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => TaskPage(
-                                cardColor: card[i].cardColor,
-                                loadingPercent: card[i].loadingPercent,
-                                title: card[i].title,
-                                id: card[i].id),
-                          ),
-                        );
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ClockDemo()));
                       },
-                      child: card[i],
+                      child: CourseDetail(
+                        cardColor: LightColors.kLightYellow,
+                        loadingPercent: 0.45,
+                        title: card[i].title,
+                        id: id,
+                      ),
                     ),
-                  ),
-                ],
+                    SizedBox(width: 20),
+                  ],
+                ),
               ),
             );
           }
 
           return Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: C,
           );
         });

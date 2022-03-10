@@ -15,12 +15,12 @@ import 'package:flutter_task_planner_app/dates_list.dart';
 import 'package:flutter_task_planner_app/widgets/task_container.dart';
 import 'package:timeline_tile/timeline_tile.dart';
 
-class Get_time extends StatelessWidget {
+class Get_Deadline extends StatelessWidget {
   List<TaskContainer> card = [];
   List<String> Path = [];
   List<String> id = [];
   List<String> title = [];
-  final Day;
+  // final Day;
   // String title = "OS";
   // String id = "261305";
   String start = "09.30 am";
@@ -34,7 +34,7 @@ class Get_time extends StatelessWidget {
     LightColors.kDarkRed,
   ];
 
-  Get_time(this.Day);
+  Get_Deadline();
 
   static CircleAvatar btn() {
     return CircleAvatar(
@@ -112,39 +112,38 @@ class Get_time extends StatelessWidget {
           List<Widget> C = [];
           List<String> time = [];
           for (int i = 0; i < card.length; i++) {
-            if (card[i].day == Day) {
-              List<String> t1 = card[i].start.split('.');
-              List<String> t2 = card[i].end.split('.');
-              double h1 = double.parse(t1[0]);
-              double m1 = double.parse(t1[1]);
-              double h2 = double.parse(t2[0]);
-              double m2 = double.parse(t2[1]);
-              double s = (h2 - h1) * 100;
-              m1 = m1 / 60 * 100;
-              m2 = m2 / 60 * 100;
-              s = s - m1 + m2;
-              if (!time.contains(card[i].start)) {
-                C.add(TimelineTile(
-                  alignment: TimelineAlign.manual,
-                  lineXY: 0.2,
-                  hasIndicator: false,
-                  startChild: Padding(
-                    padding: const EdgeInsets.symmetric(),
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: Text(
-                        card[i].start,
-                        style: TextStyle(
-                          fontSize: 16.0,
-                          color: Colors.black54,
-                        ),
+            List<String> t1 = card[i].start.split('.');
+            List<String> t2 = card[i].end.split('.');
+            double h1 = double.parse(t1[0]);
+            double m1 = double.parse(t1[1]);
+            double h2 = double.parse(t2[0]);
+            double m2 = double.parse(t2[1]);
+            double s = (h2 - h1) * 100;
+            m1 = m1 / 60 * 100;
+            m2 = m2 / 60 * 100;
+            s = s - m1 + m2;
+            if (!time.contains(card[i].start)) {
+              C.add(TimelineTile(
+                alignment: TimelineAlign.manual,
+                lineXY: 0.2,
+                hasIndicator: false,
+                startChild: Padding(
+                  padding: const EdgeInsets.symmetric(),
+                  child: Align(
+                    alignment: Alignment.bottomRight,
+                    child: Text(
+                      card[i].start,
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        color: Colors.black54,
                       ),
                     ),
                   ),
-                  endChild: _dashedText(),
-                ));
-                time.add(card[i].start);
-              }
+                ),
+                endChild: _dashedText(),
+              ));
+              time.add(card[i].start);
+
               C.add(TimelineTile(
                 alignment: TimelineAlign.manual,
                 hasIndicator: false,

@@ -31,7 +31,7 @@ class Courses extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            Header(3,0,3,3),
+            Header(3, 0, 3, 3),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -39,55 +39,6 @@ class Courses extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     SizedBox(height: 30),
-                    Container(
-                      color: Colors.transparent,
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 20.0, vertical: 10.0),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: <Widget>[
-                              HomePage.subheading('My Tasks'),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => CalendarPage()),
-                                  );
-                                },
-                                child: HomePage.calendarIcon(),
-                              ),
-                            ],
-                          ),
-                          SizedBox(height: 15.0),
-                          TaskColumn(
-                            icon: Icons.alarm,
-                            iconBackgroundColor: LightColors.kPalePink,
-                            title: 'To Do',
-                            subtitle: '5 tasks now. 1 started',
-                          ),
-                          SizedBox(
-                            height: 15.0,
-                          ),
-                          TaskColumn(
-                            icon: Icons.blur_circular,
-                            iconBackgroundColor: LightColors.kRed,
-                            title: 'In Progress',
-                            subtitle: '1 tasks now. 1 started',
-                          ),
-                          SizedBox(height: 15.0),
-                          TaskColumn(
-                            icon: Icons.check_circle_outline,
-                            iconBackgroundColor: LightColors.kDarkRed,
-                            title: 'Done',
-                            subtitle: '18 tasks now. 13 started',
-                          ),
-                        ],
-                      ),
-                    ),
                     Container(
                       color: Colors.transparent,
                       padding: EdgeInsets.symmetric(

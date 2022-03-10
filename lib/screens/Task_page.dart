@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_task_planner_app/dates_list.dart';
 import 'package:flutter_task_planner_app/theme/colors/light_colors.dart';
 import 'package:flutter_task_planner_app/widgets/Course_detail.dart';
+import 'package:flutter_task_planner_app/widgets/Get_assignment.dart';
 import 'package:flutter_task_planner_app/widgets/Header.dart';
 import 'package:flutter_task_planner_app/widgets/add_course_form.dart';
 import 'package:flutter_task_planner_app/widgets/calendar.dart';
@@ -12,7 +13,6 @@ import 'package:flutter_task_planner_app/widgets/Date.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 import 'package:flutter_task_planner_app/widgets/active_project_card.dart';
-
 
 class TaskPage extends StatelessWidget {
   final Color cardColor;
@@ -71,51 +71,7 @@ class TaskPage extends StatelessWidget {
               ),
               Expanded(
                 child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      SizedBox(height: 30),
-                      Container(
-                        alignment: Alignment(0.8, 1.0),
-                        child: Row(
-                          children: [
-                            SizedBox(width: 20),
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => ClockDemo()));
-                              },
-                              child: CourseDetail(
-                                cardColor: LightColors.kLightYellow,
-                                loadingPercent: loadingPercent,
-                                title: title,
-                                id: id,
-                              ),
-                            ),
-                            SizedBox(width: 20),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        alignment: Alignment(0.8, 1.0),
-                        child: Row(
-                          children: [
-                            SizedBox(width: 20),
-                            CourseDetail(
-                              cardColor: LightColors.kLightYellow,
-                              loadingPercent: loadingPercent,
-                              title: title,
-                              id: id,
-                            ),
-                            SizedBox(width: 20),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                  child: Get_assignment(id),
                 ),
               ),
             ],
