@@ -7,7 +7,7 @@ This app is static. I mean, This is a UI design. No backend.
 
   HomePage              |   Calendar Page | Task Create Page
 :-------------------------:|:-------------------------:|:---------------------:
-![](https://github.com/spc009/LazyRest/screenshots/'Screenshot home'?raw=true)|![](https://github.com/TheAlphaApp/flutter-task-planner-app/blob/master/screenshots/screenshot2.jpg?raw=true)|![](https://github.com/TheAlphaApp/flutter-task-planner-app/blob/master/screenshots/screenshot3.jpg?raw=true)
+![](https://github.com/spc009/LazyRest/screenshots/'Screenshot home.png'?raw=true)|![](https://github.com/TheAlphaApp/flutter-task-planner-app/blob/master/screenshots/screenshot2.jpg?raw=true)|![](https://github.com/TheAlphaApp/flutter-task-planner-app/blob/master/screenshots/screenshot3.jpg?raw=true)
 
 
 ## Pull Requests
